@@ -21,5 +21,13 @@ namespace SeleniumUiTests.Helpers
 
             Process.Start(zsStartInfo);
         }
+
+        public static void CloseApplication(string appProcessName)
+        {
+            foreach (var process in Process.GetProcessesByName(appProcessName))
+            {
+                process.Kill();
+            }
+        }
     }
 }

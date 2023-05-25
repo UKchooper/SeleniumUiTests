@@ -11,5 +11,11 @@ namespace SeleniumUiTests.Hooks
         {
             ApplicationDriver.LaunchCalculator();
         }
+
+        [AfterTestRun]
+        static void TearDownTests()
+        {
+            CommonHelpers.CloseApplication("CalculatorApp");
+        }
     }
 }
