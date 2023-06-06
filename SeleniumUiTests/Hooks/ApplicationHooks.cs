@@ -6,12 +6,13 @@ namespace SeleniumUiTests.Hooks
     [Binding]
     class ApplicationHooks
     {
-        [BeforeTestRun]
-        static void SetupTests()
-        {
-            ApplicationDriver.LaunchCalculator();
-        }
+        //[BeforeTestRun]
+        //static void SetupTests()
+        //{
+        //    ApplicationDriver.LaunchCalculator();
+        //}
 
+        [AfterScenario]
         [AfterTestRun]
         static void TearDownTests()
         {

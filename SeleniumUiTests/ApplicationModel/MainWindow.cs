@@ -25,7 +25,6 @@ namespace SeleniumUiTests.ApplicationModel
         private WindowsElement OpenNavigationButton => CalculatorWindow.FindElementWait(MobileBy.Name("Open Navigation"));
         private WindowsElement HistoryButton => CalculatorWindow.FindElementWait(MobileBy.AccessibilityId("HistoryButton"));
         private WindowsElement HistoryEmptyText => CalculatorWindow.FindElementWait(MobileBy.AccessibilityId("HistoryEmpty"));
-        private WindowsElement NumberOneButton => CalculatorWindow.FindElementWait(MobileBy.AccessibilityId("num1Button"));
         private WindowsElement VarNumberButton => CalculatorWindow.FindElementWait(MobileBy.AccessibilityId($"{numAutomationId}"));
 
         private WindowsElement PlusButton => CalculatorWindow.FindElementWait(MobileBy.AccessibilityId("plusButton"));
@@ -101,7 +100,7 @@ namespace SeleniumUiTests.ApplicationModel
             var trimmedResultsText = CalculatorResultsText.Text.Remove(0, 11);
 
             Assert.AreEqual(expectedResult.ToString(), trimmedResultsText);
-            _specFlowOutputHelper.WriteLine($"{CalculatorResultsText.Text} is equals to {expectedResult.ToString()}");
+            _specFlowOutputHelper.WriteLine($"{CalculatorResultsText.Text} is equals to {expectedResult}");
         }
 
         public void VerifyHistory(string expectedResult)
@@ -115,67 +114,32 @@ namespace SeleniumUiTests.ApplicationModel
 
         private void ConvertNumberToAutomationId(int number)
         {
-            switch (number)
+            numAutomationId = number switch
             {
-                case 0:
-                    numAutomationId = "num0Button";
-                    break;
-                case 1:
-                    numAutomationId = "num1Button";
-                    break;
-                case 2:
-                    numAutomationId = "num2Button";
-                    break;
-                case 3:
-                    numAutomationId = "num3Button";
-                    break;
-                case 4:
-                    numAutomationId = "num4Button";
-                    break;
-                case 5:
-                    numAutomationId = "num5Button";
-                    break;
-                case 6:
-                    numAutomationId = "num6Button";
-                    break;
-                case 7:
-                    numAutomationId = "num7Button";
-                    break;
-                case 8:
-                    numAutomationId = "num8Button";
-                    break;
-                case 9:
-                    numAutomationId = "num9Button";
-                    break;
-
-                default:
-                    numAutomationId = "INVALID";
-                    break;
-            }
+                0 => "num0Button",
+                1 => "num1Button",
+                2 => "num2Button",
+                3 => "num3Button",
+                4 => "num4Button",
+                5 => "num5Button",
+                6 => "num6Button",
+                7 => "num7Button",
+                8 => "num8Button",
+                9 => "num9Button",
+                _ => "INVALID",
+            };
         }
 
         private void ConvertOperationToAutomationId(string operation)
         {
-            switch (operation)
+            numAutomationId = operation switch
             {
-                case "+":
-                    numAutomationId = "plusButton";
-                    break;
-                case "-":
-                    numAutomationId = "minusButton";
-                    break;
-                case "*":
-                    numAutomationId = "multiplyButton";
-                    break;
-                case "/":
-                    numAutomationId = "divideButton";
-                    break;
-
-                default:
-                    numAutomationId = "INVALID";
-                    break;
-            }
-
+                "+" => "plusButton",
+                "-" => "minusButton",
+                "*" => "multiplyButton",
+                "/" => "divideButton",
+                _ => "INVALID",
+            };
         }
     }
 }
