@@ -7,4 +7,7 @@ The project uses:
 
 I have tried to use as many best practices as possible, however, if I have missed some, could improve in areas etc let me know!
 
-I have used the windows calculator as this should be pre-installed on all windows computers.
+Prerequisite:
+- Windows calculator (should be pre-installed on all windows computers)
+- Visual Studio 2022 with SpecFlow for Visual Studio 2022 extension
+- WinAppDriver (https://github.com/microsoft/WinAppDriver/releases/tag/v1.2.99). Once downloaded and installed, run WinAppDriver.exe (default location: C:\Program Files (x86)\Windows Application Driver)
