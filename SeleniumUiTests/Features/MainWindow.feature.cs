@@ -172,11 +172,11 @@ this.ScenarioInitialize(scenarioInfo);
         {
             string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("FirstNumber", firstNumber);
-            argumentsOfScenario.Add("SecondNumber", secondNumber);
+            argumentsOfScenario.Add("First Number", firstNumber);
+            argumentsOfScenario.Add("Second Number", secondNumber);
             argumentsOfScenario.Add("Result", result);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Subtract two numbers together and verify Calculator history", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 19
+#line 24
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -186,13 +186,13 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 20
+#line 25
  testRunner.Given("Calculator is launched", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 21
+#line 26
  testRunner.When(string.Format("Two numbers are subtracted {0} and {1}", firstNumber, secondNumber), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 22
+#line 27
  testRunner.Then(string.Format("Verify the result contains {0}", result), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -201,6 +201,8 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Multiply and divide two numbers together and verify Calculator history")]
+        [NUnit.Framework.CategoryAttribute("DataSource:../TestResources/FeatureData/Examples.xlsx")]
+        [NUnit.Framework.CategoryAttribute("DataSet:MultiplyAndDivideSheet")]
         [NUnit.Framework.TestCaseAttribute("9", "*", "1", "9", null)]
         [NUnit.Framework.TestCaseAttribute("5", "*", "5", "25", null)]
         [NUnit.Framework.TestCaseAttribute("4", "*", "0", "0", null)]
@@ -209,14 +211,21 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.TestCaseAttribute("2", "/", "0", "Cannot divide by zero", null)]
         public void MultiplyAndDivideTwoNumbersTogetherAndVerifyCalculatorHistory(string firstNumber, string operation, string secondNumber, string result, string[] exampleTags)
         {
-            string[] tagsOfScenario = exampleTags;
+            string[] @__tags = new string[] {
+                    "DataSource:../TestResources/FeatureData/Examples.xlsx",
+                    "DataSet:MultiplyAndDivideSheet"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("FirstNumber", firstNumber);
             argumentsOfScenario.Add("Operation", operation);
             argumentsOfScenario.Add("SecondNumber", secondNumber);
             argumentsOfScenario.Add("Result", result);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Multiply and divide two numbers together and verify Calculator history", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 30
+#line 43
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -226,13 +235,13 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 31
+#line 44
  testRunner.Given("Calculator is launched", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 32
+#line 45
  testRunner.When(string.Format("Two numbers are {0} together {1} and {2}", operation, firstNumber, secondNumber), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 33
+#line 46
  testRunner.Then(string.Format("Verify the result contains {0}", result), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

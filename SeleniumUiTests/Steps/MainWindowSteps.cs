@@ -33,7 +33,7 @@ namespace SeleniumUiTests.Steps
         }
 
         [When(@"Two numbers are (.*) together (.*) and (.*)")]
-        public void WhenTwoNumbersAreAnd(string operation, int firstNum, int secondNum)
+        public void WhenTwoNumbersAreAnd(string operation, string firstNum, string secondNum)
         {
             _calculatorMainWindow.VarOperationNumbersTogether(operation, firstNum, secondNum);
         }

@@ -2,6 +2,7 @@
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Windows;
 using SeleniumUiTests.Helpers;
+using System;
 using TechTalk.SpecFlow.Infrastructure;
 
 namespace SeleniumUiTests.ApplicationModel
@@ -82,13 +83,13 @@ namespace SeleniumUiTests.ApplicationModel
             VarNumberButton.ClickAndLog(nameof(VarNumberButton), _specFlowOutputHelper);
         }
 
-        public void VarOperationNumbersTogether(string operation, int firstNumb, int secondNum)
+        public void VarOperationNumbersTogether(string operation, string firstNum, string secondNum)
         {
-            ConvertNumberToAutomationId(firstNumb);
+            ConvertNumberToAutomationId(Convert.ToInt32(firstNum));
             VarNumberButton.ClickAndLog(nameof(VarNumberButton), _specFlowOutputHelper);
             ConvertOperationToAutomationId(operation);
             VarNumberButton.ClickAndLog(nameof(VarNumberButton), _specFlowOutputHelper);
-            ConvertNumberToAutomationId(secondNum);
+            ConvertNumberToAutomationId(Convert.ToInt32(secondNum));
             VarNumberButton.ClickAndLog(nameof(VarNumberButton), _specFlowOutputHelper);
         }
 
