@@ -130,6 +130,14 @@ namespace SeleniumUiTests.ApplicationModel
             }
         }
 
+        public void GetDriverPageSource()
+        {
+            string pageSource = ApplicationDriver.CalculatorSession.PageSource;
+
+            // I have placed data from pageSource into a txt file as it's easier to read
+            WriteToTxtFile.WriteStringToTxtFile(pageSource, @"C:\", "testing.txt");
+        }
+
         private void ConvertNumberToAutomationId(int number)
         {
             numAutomationId = number switch

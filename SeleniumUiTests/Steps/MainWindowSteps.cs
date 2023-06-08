@@ -67,5 +67,11 @@ namespace SeleniumUiTests.Steps
         {
             _calculatorMainWindow.VerifyDefaultMemoryButtons();
         }
+
+        [When(@"Get page source data")]
+        public void WhenGetPageSourceData()
+        {
+            _calculatorMainWindow.GetDriverPageSource();
+        }
     }
 }
