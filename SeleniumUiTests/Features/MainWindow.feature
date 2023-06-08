@@ -1,6 +1,14 @@
 ﻿Feature: Calculator
 	MainWindow of Calculator
 
+# This Scenario is just an example of how to get the Page Source data
+# Page source data displays the supported attributes which can be used for the xpath
+# If you're stuck trying to find an attribute (Name, ClassName, etc) getting the page source may help
+
+Scenario: Get Page Source
+	Given Calculator is launched
+	When Get page source data
+
 Scenario: Verify Application version
 	Given Calculator is launched
 	When Setting is navigated to
@@ -20,7 +28,7 @@ Scenario: Add two numbers together and verify Calculator history
 	When Two numbers are added '1' and '5' together
 	And Verify the result '6'
 
-#This Scenario uses Examples as a data source.
+# This Scenario uses Examples as a data source.
 # 1. Each example needs to be in brackets e.g. <First Number>
 # 2. The text should match what is in the Examples table
 # 3. The Data Type can be changed in the steps section e.g. WhenTwoNumbersAreSubtractedAnd(string firstNum, int secondNum)
