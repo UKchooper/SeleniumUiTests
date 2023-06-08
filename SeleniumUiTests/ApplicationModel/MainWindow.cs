@@ -1,9 +1,11 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Windows;
+using OpenQA.Selenium.Interactions;
 using SeleniumUiTests.Helpers;
 using System;
-using System.Collections.ObjectModel;
+using System.Collections.Generic;
+using System.Threading;
 using TechTalk.SpecFlow.Infrastructure;
 
 namespace SeleniumUiTests.ApplicationModel
@@ -35,7 +37,7 @@ namespace SeleniumUiTests.ApplicationModel
         private WindowsElement CalculatorResultsText => CalculatorWindow.FindElementWait(MobileBy.AccessibilityId("CalculatorResults"));
         private WindowsElement HistoryListViewItems => ApplicationDriver.CalculatorSession.FindElementWait(MobileBy.AccessibilityId("HistoryListView"));
         private WindowsElement MemoryControlsPanel => CalculatorWindow.FindElementWait(MobileBy.AccessibilityId("MemoryPanel"));
-        private ReadOnlyCollection<AppiumWebElement> MemoryButtons => MemoryControlsPanel.FindElements(MobileBy.XPath("//Button[@ClassName=\"Button\"]"));
+        private IReadOnlyList<AppiumWebElement> MemoryButtons => MemoryControlsPanel.FindElements(MobileBy.XPath("//Button[@ClassName=\"Button\"]"));
 
         public void LaunchSoftware()
         {

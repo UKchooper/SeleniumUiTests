@@ -1,8 +1,11 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Appium.Windows;
+using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using System;
+using System.Drawing;
 using TechTalk.SpecFlow.Infrastructure;
+using static System.Collections.Specialized.BitVector32;
 
 namespace SeleniumUiTests.Helpers
 {
