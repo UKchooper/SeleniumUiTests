@@ -4,7 +4,6 @@
 # This Scenario is just an example of how to get the Page Source data
 # Page source data displays the supported attributes which can be used for the xpath
 # If you're stuck trying to find an attribute (Name, ClassName, etc) getting the page source may help
-
 Scenario: Get Page Source
 	Given Calculator is launched
 	When Get page source data
@@ -32,7 +31,6 @@ Scenario: Add two numbers together and verify Calculator history
 # 1. Each example needs to be in brackets e.g. <First Number>
 # 2. The text should match what is in the Examples table
 # 3. The Data Type can be changed in the steps section e.g. WhenTwoNumbersAreSubtractedAnd(string firstNum, int secondNum)
-
 Scenario Outline: Subtract two numbers together and verify Calculator history
 	Given Calculator is launched
 	When Two numbers are subtracted <First Number> and <Second Number>
@@ -50,7 +48,6 @@ Scenario Outline: Subtract two numbers together and verify Calculator history
 # then finding setting the location of the data source e.g. @DataSource:../TestResources/FeatureData/Calculations.xlsx
 # .. goes back a folder /TestResources/FeatureData are the folders the .xlsx file is in /Examples.xlsx is the file
 # 3. @DataSet:MultiplAndDivideSheet is the excel sheet name
-
 @DataSource:../TestResources/FeatureData/Examples.xlsx @DataSet:MultiplyAndDivideSheet
 Scenario: Multiply and divide two numbers together and verify Calculator history
 	Given Calculator is launched
