@@ -6,17 +6,23 @@ namespace SeleniumUiTests.Hooks
     [Binding]
     class ApplicationHooks
     {
-        //[BeforeTestRun]
-        //static void SetupTests()
-        //{
-        //    ApplicationDriver.LaunchCalculator();
-        //}
+        [BeforeTestRun]
+        static void SetupTests()
+        {
+            WinAppDriverHelper.LaunchWinAppDriver();
+        }
 
         [AfterScenario]
-        [AfterTestRun]
         static void TearDownTests()
         {
             CommonHelpers.CloseApplication("CalculatorApp");
+        }
+
+        [AfterTestRun]
+        static void CloseWinAppDriver()
+        {
+            CommonHelpers.CloseApplication("CalculatorApp");
+            WinAppDriverHelper.CloseWinAppDriver();
         }
     }
 }
