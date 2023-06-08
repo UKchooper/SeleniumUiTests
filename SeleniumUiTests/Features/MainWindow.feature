@@ -11,6 +11,10 @@ Scenario: Verify Calculator history
 	When History is navigated to
 	Then Verify Calculator history is blank
 
+Scenario: Verify default Calculator memory buttons
+	Given Calculator is launched
+	Then Verify default memory buttons
+
 Scenario: Add two numbers together and verify Calculator history
 	Given Calculator is launched
 	When Two numbers are added '1' and '5' together

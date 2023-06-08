@@ -10,7 +10,9 @@ namespace SeleniumUiTests.Helpers
         private const string NativeWindowHandle = "NativeWindowHandle";
         private const string CalculatorMainWindow = "Calculator";
         private const string AppTopLevelWindow = "appTopLevelWindow";
-        private static readonly Uri DriverUri = new Uri(Extensions.WindowsApplicationDriverUrl);
+        private const string WindowsApplicationDriverUrl = "http://127.0.0.1:4723";
+
+        private static readonly Uri DriverUri = new Uri(WindowsApplicationDriverUrl);
 
         public static WindowsDriver<WindowsElement> DesktopSession;
         public static WindowsDriver<WindowsElement> CalculatorSession;

@@ -62,7 +62,10 @@ namespace SeleniumUiTests.Steps
             _calculatorMainWindow.VerifyHistoryIsEmpty();
         }
 
-        
-
+        [Then(@"Verify default memory buttons")]
+        public void ThenVerifyDefaultMemoryButtons()
+        {
+            _calculatorMainWindow.VerifyDefaultMemoryButtons();
+        }
     }
 }

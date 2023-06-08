@@ -3,6 +3,7 @@ using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Windows;
 using SeleniumUiTests.Helpers;
 using System;
+using System.Collections.ObjectModel;
 using TechTalk.SpecFlow.Infrastructure;
 
 namespace SeleniumUiTests.ApplicationModel
@@ -33,6 +34,8 @@ namespace SeleniumUiTests.ApplicationModel
         private WindowsElement EqualsButton => CalculatorWindow.FindElementWait(MobileBy.AccessibilityId("equalButton"));
         private WindowsElement CalculatorResultsText => CalculatorWindow.FindElementWait(MobileBy.AccessibilityId("CalculatorResults"));
         private WindowsElement HistoryListViewItems => ApplicationDriver.CalculatorSession.FindElementWait(MobileBy.AccessibilityId("HistoryListView"));
+        private WindowsElement MemoryControlsPanel => CalculatorWindow.FindElementWait(MobileBy.AccessibilityId("MemoryPanel"));
+        private ReadOnlyCollection<AppiumWebElement> MemoryButtons => MemoryControlsPanel.FindElements(MobileBy.XPath("//Button[@ClassName=\"Button\"]"));
 
         public void LaunchSoftware()
         {
@@ -111,6 +114,20 @@ namespace SeleniumUiTests.ApplicationModel
             //var resultListItemTwo = resultListItem.FindElementWait(MobileBy.XPath("//Text"));
 
             Assert.AreEqual(expectedResult, resultListItem.Text);
+        }
+
+        public void VerifyDefaultMemoryButtons()
+        {
+            // Count the number of Memory Buttons
+            Assert.AreEqual(6, MemoryButtons.Count);
+
+            bool[] defaultEnabledStates = { false, false, true, true, true, false };
+
+            for (int i = 0; i < MemoryButtons.Count; i++)
+            {
+                Assert.AreEqual(defaultEnabledStates[i], MemoryButtons[i].Enabled);
+                _specFlowOutputHelper.WriteLine($"{MemoryButtons[i].Text} is enabled = {defaultEnabledStates[i]}");
+            }
         }
 
         private void ConvertNumberToAutomationId(int number)

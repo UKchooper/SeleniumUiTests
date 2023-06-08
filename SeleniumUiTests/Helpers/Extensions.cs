@@ -8,7 +8,6 @@ namespace SeleniumUiTests.Helpers
 {
     public static class Extensions
     {
-        public const string WindowsApplicationDriverUrl = "http://127.0.0.1:4723";
         public const int DefaultTimeoutSeconds = 20;
         public const int DefaultPollingIntervalMilliseconds = 250;
 
