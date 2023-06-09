@@ -12,6 +12,7 @@ Prerequisite:
 - Visual Studio 2022 with SpecFlow for Visual Studio 2022 extension
 - WinAppDriver (https://github.com/microsoft/WinAppDriver/releases/tag/v1.2.99). Once downloaded and installed, run WinAppDriver.exe (default location: C:\Program Files (x86)\Windows Application Driver)
 - Locate/Install Inspect.exe
+- Enable Developer mode - https://learn.microsoft.com/en-us/windows/apps/get-started/enable-your-device-for-development
 
 To do:
 1. Showcase different Locators
