@@ -7,6 +7,8 @@ The project uses:
 
 I have tried to use as many best practices as possible, however, if I have missed some, could improve in areas etc let me know!
 
+I have been following the page object model pattern (https://www.selenium.dev/documentation/test_practices/encouraged/page_object_models/) to keep all the elements in one location. As this is a Windows application I have used 'Application Model' within my tests rather than 'Page Model'.
+
 Prerequisite:
 - Windows calculator (should be pre-installed on all windows computers)
 - Visual Studio 2022 with SpecFlow for Visual Studio 2022 extension
@@ -21,3 +23,6 @@ To do:
 Information/Guides:
 Encouraged behaviours (best practices):
 https://www.selenium.dev/documentation/test_practices/encouraged/
+
+Page object model:
+https://www.selenium.dev/documentation/test_practices/encouraged/page_object_models/
